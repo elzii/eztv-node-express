@@ -1,0 +1,12 @@
+div(data-role='page')
+    header(data-role='header')
+        h1= title
+    div(data-role='content')
+        - if(items.length)
+            ul(data-role='listview')
+                - items.forEach(function(item){
+                    li
+                        a(href=item['linkurl'])
+                            img(src=item['thumbnail'], alt='Thumbnail', class='img-torrent')
+                            h3= item['linktext']
+                - })
